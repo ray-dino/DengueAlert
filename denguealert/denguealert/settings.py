@@ -38,10 +38,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.gis',
 
     # Third-party apps
     'south',
-    
+
     # Applications
     'denguealert',
 )
@@ -65,7 +66,7 @@ WSGI_APPLICATION = 'denguealert.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': CONFIG['database']['default']['name'],
         'USER': CONFIG['database']['default']['user'],
         'PASSWORD': CONFIG['database']['default']['password'],
