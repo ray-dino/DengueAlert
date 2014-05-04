@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>Dengue Alert</title>
+    {% block extra_css %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" media="screen">
+    {% endblock extra_css %}
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12 navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">Dengue Alert</a>
+                <ul class="nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% block body %}
+{% endblock body %}
+</div>
+
+{% block extra_js %}
+<script src="{% static 'jquery/jquery-2.1.1.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+{% endblock extra_js %}
+</body>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="row">
+    <div class="span4 offset4">
+        {% if form.errors %}
+        <span class="alert label"><h6>Your username and password didn't match.</h6></span>
+        {% endif %}
+        <form method="POST" action="" onsubmit="">{% csrf_token %}
+            <fieldset>
+                <legend>
+                    Login
+                </legend>
+
+                <label>{{ form.username.label_tag }}</label>
+                {{ form.username }}
+
+                <label>{{ form.password.label_tag }}</label>
+                {{ form.password }}
+                <br>
+                <input type="hidden" name="next" value="{% if next %}{{ next }}{% else %}/report/{% endif %}" />
+                <input class="btn btn-primary" type="submit" class="button" value="Login" />
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock body %}

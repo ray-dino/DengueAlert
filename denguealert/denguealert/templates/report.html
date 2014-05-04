@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="row-fluid">
+    <div class="span2">
+        <form> {% csrf_token %}
+            <fieldset>
+                <legend>Case Report</legend>
+                {{ form.as_p }}
+            </fieldset>
+        </form>
+    </div>
+    <div class="span10">
+        <input type="button" class="btn btn-primary" value="Add Location" />
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>Latitude</td>
+                    <td>Longitude</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock body %}
